@@ -1,0 +1,42 @@
+<launch>
+
+  <include file="$(find arm_perception_utilities)/launch/robot_vision_system.launch">
+  </include>
+
+  <node name="rqt_gui_window" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find arm_perception_utilities)/cfg/sim.perspective"/>
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find arm_perception_utilities)/cfg/sim.rviz" />
+
+  <!-- By default, we do not start a database (it can be large) -->
+  <arg name="db" default="false" />
+  <!-- Allow user to specify database location -->
+  <arg name="db_path" default="$(find staubli_tx2_60_moveit_config)/default_warehouse_mongo_db" />
+
+  <!-- By default, we are not in debug mode -->
+  <arg name="debug" default="false" />
+
+
+  <!-- launch the gazebo simulator and spawn the robot -->
+  <include file="$(find staubli_tx2_60_gazebo)/launch/tx2_60_gazebo.launch" >
+  </include>
+
+  <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+  <include file="$(find staubli_tx2_60_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="false"/>
+  </include>
+
+ 
+  <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
+  <include file="$(find staubli_tx2_60_moveit_config)/launch/move_group.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="fake_execution" value="false"/>
+    <arg name="info" value="true"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>  
+
+
+  <!-- If database loading was enabled, start mongodb as well -->
+  <include file="$(find staubli_tx2_60_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)">
+    <arg name="moveit_warehouse_database_path" value="$(arg db_path)"/>
+  </include>
+
+</launch>
