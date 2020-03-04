@@ -40,8 +40,8 @@
 
   <build_depend>roscpp</build_depend>
   <build_depend>gazebo_ros</build_depend>
-  <build_depend>arm_perception_utilities</build_depend>
-  <exec_depend>arm_perception_utilities</exec_depend>
+  <build_depend>staubli_arm_perception_utilities</build_depend>
+  <exec_depend>staubli_arm_perception_utilities</exec_depend>
 
   <build_export_depend>roscpp</build_export_depend>
   <depend>gazebo_plugins</depend>
