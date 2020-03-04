@@ -158,8 +158,8 @@ void SimulationPickandPlace::OnUpdate() {
             // Where should this object placed ? , first go to default home_pose
             std::vector<ignition::math::Vector3d> placing_poses_vector;
             ignition::math::Vector3d placing_pose;
-            placing_pose[0] = 0.550;
-            placing_pose[1] = 0.350;
+            placing_pose[0] = 0.450;
+            placing_pose[1] = 0.300;
             placing_pose[2] = 0.2;
             placing_poses_vector.push_back(placing_pose);
             placing_pose[0] -= 0.15;
