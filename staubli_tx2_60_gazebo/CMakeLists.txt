@@ -9,7 +9,6 @@ find_package(catkin REQUIRED COMPONENTS
   gazebo_ros
   gazebo_plugins
   roscpp
-  staubli_arm_perception_utilities
  )
 
 find_package(gazebo 9 REQUIRED)
@@ -21,7 +20,7 @@ endif()
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR}  )
 include_directories(include ${staubli_arm_perception_utilities_INCLUDE_DIRS})
-include_directories(include ~/catkin_ws/src/PICK_PLACE_with_ROS_on_STAUBLI_ARM/staubli_arm_perception_utilities/include/)
+
 
 catkin_package(
   #INCLUDE_DIRS  ${GAZEBO_INCLUDE_DIRS}
@@ -30,12 +29,6 @@ catkin_package(
 #  DEPENDS system_lib EIGEN3 staubli_arm_perception_utilities
 )  
 
-set(SOURCES
-      ~/catkin_ws/src/PICK_PLACE_with_ROS_on_STAUBLI_ARM/staubli_arm_perception_utilities/src/pickplace/PickandPlacer.cpp
-      ~/catkin_ws/src/PICK_PLACE_with_ROS_on_STAUBLI_ARM/staubli_arm_perception_utilities/src/utils.cpp
-      ~/catkin_ws/src/PICK_PLACE_with_ROS_on_STAUBLI_ARM/staubli_arm_perception_utilities/src/control/RobotController.cpp
-      ~/catkin_ws/src/PICK_PLACE_with_ROS_on_STAUBLI_ARM/staubli_arm_perception_utilities/src/pickplace/PickandPlacer.cpp)
- 
 add_library(model_push_staubli SHARED plugins/MoveObject.cc)
 target_link_libraries(model_push_staubli ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
 
@@ -43,7 +36,7 @@ add_library(random_model_push_staubli SHARED plugins/RandomMoveObject.cc)
 target_link_libraries(random_model_push_staubli ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
 
 add_library(sim_pickplace_staubli SHARED plugins/SimulationPickandPlace.cc  ${SOURCES})
-target_link_libraries(sim_pickplace_staubli ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${OpenCV_LIBS} ${staubli_arm_perception_utilities})
+target_link_libraries(sim_pickplace_staubli ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${OpenCV_LIBS})
 install(TARGETS sim_pickplace_staubli DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 add_dependencies(sim_pickplace_staubli ${PROJECT_NAME}_EXPORTED_TARGETS})
 

@@ -12,13 +12,11 @@
 #include <gazebo/gazebo.hh>
 #include <gazebo/physics/physics.hh>
 #include <ignition/math4/ignition/math/Vector3.hh>
-
-#include <staubli_arm_perception_utilities/pickplace/PickandPlacer.h>
 #include <geometry_msgs/Pose.h>
 #include <geometry_msgs/PoseArray.h>
 #include <moveit/move_group_interface/move_group_interface.h>
+#include <tf/transform_listener.h>
 
-#include <staubli_arm_perception_utilities/utils.h>
 #include <jsk_recognition_msgs/BoundingBox.h>
 #include <jsk_recognition_msgs/BoundingBoxArray.h>
 
