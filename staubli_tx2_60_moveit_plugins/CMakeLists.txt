@@ -27,5 +27,3 @@ catkin_package(
 )
 
 add_subdirectory(tx2_60_kinematics)
-install(FILES readme.md DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
-
