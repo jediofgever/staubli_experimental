@@ -2,9 +2,10 @@
   <!-- The planning and execution components of MoveIt! configured to run -->
   <!-- using the ROS-Industrial interface. -->
 
-
+  <param name="is_using_sim" type="bool" value="false" />  
   <include file="$(find staubli_arm_perception_utilities)/launch/robot_vision_system.launch">
   </include>
+  
  
   <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find staubli_arm_perception_utilities)/cfg/default.perspective"/>
  
