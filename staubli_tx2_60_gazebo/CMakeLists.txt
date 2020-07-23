@@ -9,6 +9,9 @@ find_package(catkin REQUIRED COMPONENTS
   gazebo_ros
   gazebo_plugins
   roscpp
+  image_transport
+  camera_info_manager
+  sensor_msgs
  )
 
 find_package(gazebo 9 REQUIRED)
@@ -19,31 +22,46 @@ endif()
 
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS} ${SDFormat_INCLUDE_DIRS} ${EIGEN3_INCLUDE_DIR}  )
-include_directories(include ${staubli_arm_perception_utilities_INCLUDE_DIRS})
-
-
+ 
 catkin_package(
-  #INCLUDE_DIRS  ${GAZEBO_INCLUDE_DIRS}
   LIBRARIES  
-  CATKIN_DEPENDS roscpp gazebo_ros  
-#  DEPENDS system_lib EIGEN3 staubli_arm_perception_utilities
-)  
+  CATKIN_DEPENDS 
+  roscpp 
+  gazebo_ros 
+  image_transport
+  camera_info_manager
+  sensor_msgs
+ )  
 
-add_library(model_push_staubli SHARED plugins/MoveObject.cc)
-target_link_libraries(model_push_staubli ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
+add_library(staubli_tx2_60_gazebo_model_push SHARED plugins/MoveObject.cc)
+target_link_libraries(staubli_tx2_60_gazebo_model_push ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
 
-add_library(random_model_push_staubli SHARED plugins/RandomMoveObject.cc)
-target_link_libraries(random_model_push_staubli ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
+add_library(staubli_tx2_60_gazebo_random_model_push SHARED plugins/RandomMoveObject.cc)
+target_link_libraries(staubli_tx2_60_gazebo_random_model_push ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
 
-add_library(sim_pickplace_staubli SHARED plugins/SimulationPickandPlace.cc  ${SOURCES})
-target_link_libraries(sim_pickplace_staubli ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${OpenCV_LIBS})
-install(TARGETS sim_pickplace_staubli DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
-add_dependencies(sim_pickplace_staubli ${PROJECT_NAME}_EXPORTED_TARGETS})
+add_library(staubli_tx2_60_gazebo_pick_place SHARED plugins/SimulationPickandPlace.cc  ${SOURCES})
+target_link_libraries(staubli_tx2_60_gazebo_pick_place ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES} ${EIGEN3_LIBRARIES} ${OpenCV_LIBS} ${fanuc_arm_perception_utilities})
+add_dependencies(staubli_tx2_60_gazebo_pick_place ${PROJECT_NAME}_EXPORTED_TARGETS})
 
-
-install(TARGETS  
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+add_library(staubli_tx2_60_gazebo_realsense_gazebo_plugin
+    plugins/RealSensePlugin.cpp
+    plugins/gazebo_ros_realsense.cpp
 )
+target_link_libraries(staubli_tx2_60_gazebo_realsense_gazebo_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+add_dependencies(staubli_tx2_60_gazebo_realsense_gazebo_plugin ${catkin_EXPORTED_TARGETS})
 
+#Install Libraries
+install(TARGETS
+    staubli_tx2_60_gazebo_model_push 
+    staubli_tx2_60_gazebo_random_model_push
+    staubli_tx2_60_gazebo_pick_place
+    staubli_tx2_60_gazebo_realsense_gazebo_plugin
+    ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+    LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+)
+#Install Directory
+install(DIRECTORY config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY launch DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY meshes DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY urdf DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+install(DIRECTORY worlds DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})

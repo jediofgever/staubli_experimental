@@ -6,7 +6,7 @@
     <joint name="gripper_base_to_link_6" type="fixed">
         <parent link="link_6" />
         <child link="gripper_base_link" />
-        <origin rpy="3.14 0 0" xyz="0.0 0 0.001" />
+        <origin rpy="0 0 3.14" xyz="0.0 0 0.001" />
     </joint>
 
     <!-- Gripper Base -->
