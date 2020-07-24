@@ -9,7 +9,7 @@
   <xacro:gripper prefix=""/>  
 
   <sensor_d435 parent="link_6">
-    <origin xyz="0.105 -0.0 0.01" rpy="0 -1.57 0"/>
+    <origin xyz="0.105 -0.0 0.01" rpy="0 -1.57 3.14"/>
   </sensor_d435>
  
   <!-- Fix robot to Gazebo world -->
