@@ -2,7 +2,6 @@
 
   <param name="is_using_sim" type="bool" value="true" />
 
-
   <include file="$(find staubli_arm_perception_utilities)/launch/robot_vision_system.launch"></include>
 
   <node name="rqt_gui" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find staubli_arm_perception_utilities)/cfg/default.perspective" />
@@ -18,15 +17,9 @@
   <!-- launch the gazebo simulator and spawn the robot -->
   <include file="$(find staubli_rx160_gazebo)/launch/rx160_gazebo.launch"></include>
 
-
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
   <include file="$(find staubli_rx160_moveit_config)/launch/planning_context.launch">
     <arg name="load_robot_description" value="false" />
-  </include>
-
-  <!-- If database loading was enabled, start mongodb as well -->
-  <include file="$(find staubli_rx160_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)">
-    <arg name="moveit_warehouse_database_path" value="$(arg db_path)" />
   </include>
 
   <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
@@ -35,6 +28,11 @@
     <arg name="fake_execution" value="false" />
     <arg name="info" value="true" />
     <arg name="debug" value="$(arg debug)" />
+  </include>
+
+  <!-- If database loading was enabled, start mongodb as well -->
+  <include file="$(find staubli_rx160_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)">
+    <arg name="moveit_warehouse_database_path" value="$(arg db_path)" />
   </include>
 
 </launch>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="gripper" params="prefix">
+
+        <!-- Part 6 Gripper Base Joint -->
+        <joint name="gripper_base_to_link_6" type="fixed">
+            <parent link="link_6" />
+            <child link="gripper_base_link" />
+            <origin rpy="0 0 3.14" xyz="0.0 0 0.001" />
+        </joint>
+
+        <!-- Gripper Base -->
+        <link name="gripper_base_link">
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0" />
+                <geometry>
+                    <mesh filename="package://staubli_tx2_60_support/meshes/tx2_60/collision/gripper_base.stl" />
+                </geometry>
+            </collision>
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0" />
+                <geometry>
+                    <mesh filename="package://staubli_tx2_60_support/meshes/tx2_60/visual/gripper_base.stl" />
+                </geometry>
+                <material name="">
+                    <color rgba="0.96 0.76 0.13 1.0" />
+                </material>
+            </visual>
+
+            <inertial>
+                <origin rpy="0 0 0" xyz="0.00112 0.04196 0" />
+                <mass value="1.067" />
+                <inertia ixx="0.00372062398" ixy="-0.000013337910" ixz="0.000000013" iyy=".00223540544" iyz="-0.00000003496" izz=".003641916" />
+            </inertial>
+        </link>
+
+        <gazebo reference="gripper_base_link">
+            <material>Gazebo/Black</material>
+        </gazebo>
+
+    </xacro:macro>
+</robot>
