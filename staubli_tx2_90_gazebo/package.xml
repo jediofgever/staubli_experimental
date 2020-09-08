@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>staubli_tx2_90_gazebo</name>
+  <version>0.1.0</version>
+  <description>
+    <p>
+      ROS-Industrial Gazebo support for the Fanuc LR Mate 200iD (and variants).
+    </p>
+    <p>
+      This package contains configuration data and launch files for Gazebo
+      for Staubli TX290 manipulators.
+    </p>
+  </description>
+  <author>G.A. vd. Hoorn (TU Delft Robotics Institute)</author>
+  <author email="fetulahatas1@gmail.com"> Fetullah Atas</author>
+  <maintainer email="g.a.vanderhoorn@tudelft.nl">G.A. vd. Hoorn (TU Delft Robotics Institute)</maintainer>
+  <license>BSD</license>
+
+  <url type="website">http://wiki.ros.org/fanuc_lrmate200id_gazebo</url>
+  <url type="bugtracker">https://github.com/ros-industrial/fanuc_experimental/issues</url>
+  <url type="repository">https://github.com/ros-industrial/fanuc_experimental</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>gazebo</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_ros_control</exec_depend>
+  <exec_depend>gazebo_ros_pkgs</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>joint_trajectory_controller</exec_depend>
+  <exec_depend>position_controllers</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>ros_controllers</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>image_transport</exec_depend>
+  <exec_depend>camera_info_manager</exec_depend>
+  <exec_depend>staubli_arm_perception_utilities</exec_depend>
+
+  
+
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>camera_info_manager</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>staubli_arm_perception_utilities</build_depend>
+
+  <build_export_depend>roscpp</build_export_depend>
+  <depend>gazebo_plugins</depend>
+</package>

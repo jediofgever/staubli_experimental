@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: staubli_rx160_support
+    relative_path: urdf/rx160.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/staubli_rx160.srdf
+  CONFIG:
+    author_name: Fetullah Atas
+    author_email: fetulahatas1@gmail.com
+    generated_timestamp: 1599541835
