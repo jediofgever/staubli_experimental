@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+  Manipulator specific version of 'robot_interface_streaming.launch'.
+
+  Defaults provided for LR Mate 200iD:
+   - J23_factor = 1
+   - use_bswap = true
+   - 6 joints
+
+  Usage:
+    robot_interface_streaming_lrmate200id.launch robot_ip:=<value>
+-->
+<launch>
+  <arg name="robot_ip" doc="IP of controller" />
+  <rosparam command="load" file="$(find staubli_tx200_support)/config/joint_names_tx200.yaml" />
+
+  <include file="$(find staubli_val3_driver)/launch/robot_interface_streaming.launch">
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+  </include>
+</launch>

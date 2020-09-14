@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: staubli_tx200_support
+    relative_path: urdf/tx200.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/staubli_tx200.srdf
+  CONFIG:
+    author_name: Fetullah Atas
+    author_email: fetulahatas1@gmail.com
+    generated_timestamp: 1600053243

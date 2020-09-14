@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot name="staubli_tx200_gazebo" xmlns:xacro="http://wiki.ros.org/xacro">
+  <!-- TX60 -->
+  <xacro:include filename="$(find staubli_tx200_gazebo)/urdf/tx200_macro.xacro" />
+  <xacro:include filename="$(find staubli_tx200_gazebo)/urdf/_d435.urdf.xacro" />
+  <xacro:include filename="$(find staubli_tx200_support)/urdf/gripper_macro.xacro" />
+
+  <xacro:staubli_tx200_robot prefix="" />
+  <xacro:gripper prefix="" />
+
+  <sensor_d435 parent="link_6">
+    <origin xyz="0.105 -0.0 0.01" rpy="0 -1.57 3.14" />
+  </sensor_d435>
+
+  <!-- Fix robot to Gazebo world -->
+  <link name="world" />
+  <joint name="world-base_link-fixed" type="fixed">
+    <parent link="world" />
+    <child link="base_link" />
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+  </joint>
+</robot>
