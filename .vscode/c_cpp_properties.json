@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/atas/staubli_ws/install/include/**",
+        "/home/atas/staubli_ws/devel/include/**",
+        "/home/atas/catkin_ws/devel/include/**",
+        "/home/atas/catkin_ws/install/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/atas/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM-release/fanuc_arm_perception_utilities/include/**",
+        "/home/atas/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM-release/fanuc_driver/include/**",
+        "/home/atas/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM-release/fanuc_user_interface_rqt_plugin/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ]
+}
