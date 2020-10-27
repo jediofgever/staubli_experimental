@@ -1,22 +1,28 @@
 {
-  "configurations": [
-    {
-      "browse": {
-        "databaseFilename": "",
-        "limitSymbolsToIncludedHeaders": true
-      },
-      "includePath": [
-        "/home/atas/staubli_ws/install/include/**",
-        "/home/atas/staubli_ws/devel/include/**",
-        "/home/atas/catkin_ws/devel/include/**",
-        "/home/atas/catkin_ws/install/include/**",
-        "/opt/ros/melodic/include/**",
-        "/home/atas/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM-release/fanuc_arm_perception_utilities/include/**",
-        "/home/atas/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM-release/fanuc_driver/include/**",
-        "/home/atas/catkin_ws/src/PICK_PLACE_with_ROS_on_FANUC_ARM-release/fanuc_user_interface_rqt_plugin/include/**",
-        "/usr/include/**"
-      ],
-      "name": "ROS"
-    }
-  ]
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/royle/staubli_ws/install/include/**",
+                "/home/royle/staubli_ws/devel/include/**",
+                "/home/royle/catkin_ws/devel/include/**",
+                "/home/royle/catkin_ws/install/include/**",
+                "/opt/ros/melodic/include/**",
+                "/home/royle/catkin_ws/src/PICK_PLACE_with_ROS_on_STAUBLI_ARM/staubli_arm_perception_utilities/include/**",
+                "/home/royle/catkin_ws/src/PICK_PLACE_with_ROS_on_STAUBLI_ARM/staubli_driver/include/**",
+                "/home/royle/catkin_ws/src/PICK_PLACE_with_ROS_on_STAUBLI_ARM/staubli_user_interface_rqt_plugin/include/**",
+                "/usr/include/**",             
+                "/usr/include/gazebo-9/gazebo/**"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++14"
+        }
+    ],
+    "version": 4
 }
