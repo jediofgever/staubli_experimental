@@ -1615,13 +1615,13 @@
       </link>
       <pose frame=''>0.389128 -1.10309 0 0 -0 0</pose>
     </model>
-    <plugin name='fanuc_lrmate200id_gazebo_pick_place' filename='libfanuc_lrmate200id_gazebo_pick_place.so'/>
+    <plugin name='staubli_tx2_90_gazebo_pick_place' filename='libstaubli_tx2_90_gazebo_pick_place.so'/>
     <audio>
       <device>default</device>
     </audio>
     <model name='pulley_part_aria3_clone_1_clone'>
-      <plugin name='fanuc_lrmate200id_gazebo_model_push' filename='libfanuc_lrmate200id_gazebo_model_push.so'/>
-      <plugin name='fanuc_lrmate200id_gazebo_random_model_push' filename='libfanuc_lrmate200id_gazebo_random_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_model_push' filename='libstaubli_tx2_90_gazebo_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_random_model_push' filename='libstaubli_tx2_90_gazebo_random_model_push.so'/>
       <link name='pulley_part_ariac::link'>
         <gravity>0</gravity>
         <inertial>
@@ -1680,8 +1680,8 @@
       <pose frame=''>0.543754 0.087879 0.15 3.14159 -0 0</pose>
     </model>
     <model name='pulley_part_aria3_clone_1_clone_0'>
-      <plugin name='fanuc_lrmate200id_gazebo_model_push' filename='libfanuc_lrmate200id_gazebo_model_push.so'/>
-      <plugin name='fanuc_lrmate200id_gazebo_random_model_push' filename='libfanuc_lrmate200id_gazebo_random_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_model_push' filename='libstaubli_tx2_90_gazebo_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_random_model_push' filename='libstaubli_tx2_90_gazebo_random_model_push.so'/>
       <link name='pulley_part_ariac::link'>
         <gravity>0</gravity>
         <inertial>
@@ -1740,8 +1740,8 @@
       <pose frame=''>0.488138 -0.07046 0.15 3.14159 -0 0</pose>
     </model>
     <model name='pulley_part_aria3_clone_1_clone_1'>
-      <plugin name='fanuc_lrmate200id_gazebo_model_push' filename='libfanuc_lrmate200id_gazebo_model_push.so'/>
-      <plugin name='fanuc_lrmate200id_gazebo_random_model_push' filename='libfanuc_lrmate200id_gazebo_random_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_model_push' filename='libstaubli_tx2_90_gazebo_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_random_model_push' filename='libstaubli_tx2_90_gazebo_random_model_push.so'/>
       <link name='pulley_part_ariac::link'>
         <gravity>0</gravity>
         <inertial>
@@ -1800,8 +1800,8 @@
       <pose frame=''>0.408599 -0.244659 0.15 3.14159 -0 0</pose>
     </model>
     <model name='pulley_part_aria3_clone_1_clone_2'>
-      <plugin name='fanuc_lrmate200id_gazebo_model_push' filename='libfanuc_lrmate200id_gazebo_model_push.so'/>
-      <plugin name='fanuc_lrmate200id_gazebo_random_model_push' filename='libfanuc_lrmate200id_gazebo_random_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_model_push' filename='libstaubli_tx2_90_gazebo_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_random_model_push' filename='libstaubli_tx2_90_gazebo_random_model_push.so'/>
       <link name='pulley_part_ariac::link'>
         <gravity>0</gravity>
         <inertial>
@@ -1860,8 +1860,8 @@
       <pose frame=''>0.265842 -0.094706 0.15 3.14159 -0 0</pose>
     </model>
     <model name='pulley_part_aria3_clone_1_clone_3'>
-      <plugin name='fanuc_lrmate200id_gazebo_model_push' filename='libfanuc_lrmate200id_gazebo_model_push.so'/>
-      <plugin name='fanuc_lrmate200id_gazebo_random_model_push' filename='libfanuc_lrmate200id_gazebo_random_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_model_push' filename='libstaubli_tx2_90_gazebo_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_random_model_push' filename='libstaubli_tx2_90_gazebo_random_model_push.so'/>
       <link name='pulley_part_ariac::link'>
         <gravity>0</gravity>
         <inertial>
@@ -1920,8 +1920,8 @@
       <pose frame=''>0.325721 0.052398 0.15 3.14159 -0 0</pose>
     </model>
     <model name='pulley_part_aria3_clone_1_clone_1_clone'>
-      <plugin name='fanuc_lrmate200id_gazebo_model_push' filename='libfanuc_lrmate200id_gazebo_model_push.so'/>
-      <plugin name='fanuc_lrmate200id_gazebo_random_model_push' filename='libfanuc_lrmate200id_gazebo_random_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_model_push' filename='libstaubli_tx2_90_gazebo_model_push.so'/>
+      <plugin name='staubli_tx2_90_gazebo_random_model_push' filename='libstaubli_tx2_90_gazebo_random_model_push.so'/>
       <link name='pulley_part_ariac::link'>
         <gravity>0</gravity>
         <inertial>
