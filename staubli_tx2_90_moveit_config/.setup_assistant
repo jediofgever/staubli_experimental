@@ -1,11 +1,11 @@
 moveit_setup_assistant_config:
   URDF:
-    package: staubli_tx90_support
-    relative_path: urdf/tx90.xacro
+    package: staubli_tx2_90_support
+    relative_path: urdf/tx2_90.xacro
     xacro_args: ""
   SRDF:
-    relative_path: config/staubli_tx90.srdf
+    relative_path: config/staubli_tx2_90.srdf
   CONFIG:
     author_name: Fetullah Atas
     author_email: fetulahatas1@gmail.com
-    generated_timestamp: 1599547634
+    generated_timestamp: 1603863708
