@@ -108,14 +108,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://staubli_tx60_support/meshes/tx60/visual/link_5.stl" />
+          <mesh filename="package://staubli_tx200_support/meshes/tx200/visual/link_5.stl" />
         </geometry>
         <xacro:material_staubli_ral_grey_aluminium />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://staubli_tx60_support/meshes/tx60/collision/link_5.stl" />
+          <mesh filename="package://staubli_tx200_support/meshes/tx200/collision/link_5.stl" />
         </geometry>
       </collision>
       <inertial>
@@ -128,14 +128,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://staubli_tx60_support/meshes/tx60/visual/link_6.stl" />
+          <mesh filename="package://staubli_tx200_support/meshes/tx200/visual/link_6.stl" />
         </geometry>
         <xacro:material_staubli_ral_grey_aluminium />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://staubli_tx60_support/meshes/tx60/collision/link_6.stl" />
+          <mesh filename="package://staubli_tx200_support/meshes/tx200/collision/link_6.stl" />
         </geometry>
       </collision>
       <inertial>
